@@ -6,7 +6,7 @@ function changeH1 (newTitle)
     newH1.innerText = newTitle;
 }
 
-changeH1("Batı's Smartphone Shop")
+changeH1(newTitle)
 
 //EX8
 function changeBGColor (newBGColor)
@@ -15,7 +15,7 @@ function changeBGColor (newBGColor)
     newBG.style.backgroundColor = newBGColor;
 }
 
-changeBGColor("white")
+changeBGColor(newBGColor)
 
 //EX9: Write a function to change the footer address with a fake one
 
@@ -26,23 +26,45 @@ function changeFooter (newFooter)
     footer.innerText = newFooter;
 }
 
-changeFooter("Prof. Dr. Sadan Gokovali Cd. No:18 Ula/Mugla")
+changeFooter(newFooter)
 
 //EX10: Write a function to add a CSS class to every Amazon link
 
-function addCSSClass(newCSSClass)
+function addCSSClass()
 {
-    let newCSS = document.querySelectorAll("image");
-    for (let i = 0; newCSS.length; i++)
+    let newCSS = document.querySelectorAll(".image");
+    console.log(newCSS);
+    for (let i = 0; i < newCSS.length; i++)
     {
-        let newCSSNode = newCSS[i]
-        newCSSNode.classList.add(newCSSClass);
+        let newCSSNode = newCSS[i];
+        newCSSNode.classList.add("image-class");
     }
 }
 
-addCSSClass("image-class")
+addCSSClass()
 
 
 //EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
 
+function toggleImages()
+{
+    let imageNodes = document.querySelectorAll(".image")
+    for (let i = 0; i < imageNodes.length; i++)
+    {
+        let node = imageNodes[i]
+        node.classList.toggle("selected")
+    }
+}
+
+
 //EX12: Write a function to color the price of the products in a different one every time it’s invoked
+
+function invokePrices()
+{
+    let priceNodes = document.querySelectorAll(".price")
+    for (let i = 0; i< priceNodes.length; i++)
+    {
+        let node = priceNodes[i]
+        node.classList.toggle("invoke")
+    }
+}

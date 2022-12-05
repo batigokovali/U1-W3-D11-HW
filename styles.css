@@ -17,6 +17,10 @@ body {
     border-style: solid;
 }
 
+.selected {
+    visibility: hidden;
+}
+
 .link {
     width: 100%;
     height: 100%;
@@ -41,4 +45,10 @@ body {
     height: 30px;
 }
 
+table, th, td {
+    border: solid 1px;
+}
 
+.invoke {
+    font-weight: bold;
+}
