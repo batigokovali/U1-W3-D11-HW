@@ -1,12 +1,11 @@
 //EX7 Write a function to change the h1 text to something else
-function changeH1 (newTitle)
-{
-    let newH1 = document.getElementById("shop-header-h1")
-    console.log(newH1)
-    newH1.innerText = newTitle;
+function changeH1 (Title)
+{   
+    let nodeTitle = document.getElementById("shop-header-h1")
+    nodeTitle.innerText = Title;
 }
 
-changeH1(newTitle)
+
 
 //EX8
 function changeBGColor (newBGColor)
@@ -15,7 +14,7 @@ function changeBGColor (newBGColor)
     newBG.style.backgroundColor = newBGColor;
 }
 
-changeBGColor(newBGColor)
+
 
 //EX9: Write a function to change the footer address with a fake one
 
@@ -26,7 +25,7 @@ function changeFooter (newFooter)
     footer.innerText = newFooter;
 }
 
-changeFooter(newFooter)
+
 
 //EX10: Write a function to add a CSS class to every Amazon link
 
@@ -41,7 +40,7 @@ function addCSSClass()
     }
 }
 
-addCSSClass()
+
 
 
 //EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
@@ -59,12 +58,30 @@ function toggleImages()
 
 //EX12: Write a function to color the price of the products in a different one every time it’s invoked
 
-function invokePrices()
+function randomInteger(max)
 {
-    let priceNodes = document.querySelectorAll(".price")
-    for (let i = 0; i< priceNodes.length; i++)
+    return Math.floor(Math.random()*(max +1));
+}
+
+console.log(randomInteger(255));
+
+function randomRGBColor()
+{
+    let r = randomInteger(255);
+    let g = randomInteger(255);
+    let b = randomInteger(255);
+    return [r,g,b];
+}
+
+
+function randomPriceColor()
+{
+    let priceNode = document.querySelectorAll(".price")
+    for (i = 0; i< priceNode.length; i++)
     {
-        let node = priceNodes[i]
-        node.classList.toggle("invoke")
+        let node = priceNode[i];
+        node.style.color = `rgb(${randomRGBColor()})`
     }
 }
+
+randomPriceColor()
