@@ -63,7 +63,6 @@ function randomInteger(max)
     return Math.floor(Math.random()*(max +1));
 }
 
-console.log(randomInteger(255));
 
 function randomRGBColor()
 {
@@ -84,4 +83,3 @@ function randomPriceColor()
     }
 }
 
-randomPriceColor()
